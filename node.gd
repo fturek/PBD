@@ -6,15 +6,16 @@ extends Node2D
 var velocity          := Vector2( 0.0, 0.0 )
 var previous_position := Vector2( 0.0, 0.0 )
 var force             := Vector2( 0.0, 0.0 )
-var gravity           := Vector2( 0.0, 100.0 )
+var gravity           := Vector2( 0.0, 0.0 )
 
 var mass:float      = 1.0 setget set_mass
-var w:float         = 10.0 # 1./mass
+var w:float         = 1.0 # 1./mass
 var neighbors:Array = []
 var stiffness:Array = []
 var resting_length:Array = []
 
 var projected_point   := Vector2( 0.0, 0.0 )
+var deltaX1           := Vector2.ZERO
 
 #onready var debug = get_node("../../GUI/Debug")
 
@@ -34,6 +35,9 @@ func add_neighbor(point_mass):
 func _ready():
 	previous_position = position - velocity * get_physics_process_delta_time()
 
+func _physics_process(delta):
+	$sprite2.position = previous_position - position
+	
 func get_force():
 	force = Vector2()
 	for i in range( neighbors.size() ):
@@ -53,7 +57,7 @@ func euler( delta ):
 func symplectic_euler( delta ):
 	get_force()
 	velocity += force  * delta
-	position += velocity * delta - velocity * 0.01
+	position += velocity * delta #- velocity * 0.01
 
 func set_mass(m):
 	mass = m

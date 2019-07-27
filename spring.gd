@@ -27,8 +27,8 @@ func initialize( node_1:PointMass, node_2:PointMass ):
 	to   = node_2
 	
 	d = 1
-	c_param.x = abs( from.position.x - to.position.x) - d
-	c_param.y = abs( from.position.y - to.position.y) - d
+	c_param.x = from.position.x - to.position.x #- d
+	c_param.y = from.position.y - to.position.y #- d
 
 func _ready():
 #	if !Engine.is_editor_hint():

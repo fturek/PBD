@@ -28,16 +28,16 @@ __meta__ = {
 [node name="springs" type="Node" parent="."]
 
 [node name="link" parent="springs" instance=ExtResource( 2 )]
-position = Vector2( 877.09, 156.69 )
-rotation = -0.492406
-scale = Vector2( 0.190843, 1.30998 )
+position = Vector2( 858.59, 174.69 )
+rotation = -0.805184
+scale = Vector2( 0.198425, 1.25992 )
 node_path_1 = NodePath("../../Oscillator/node")
 node_path_2 = NodePath("../../Oscillator/node2")
 
 [node name="link2" parent="springs" instance=ExtResource( 2 )]
-position = Vector2( 770.353, 155.974 )
-rotation = 0.742226
-scale = Vector2( 0.161167, 1.55118 )
+position = Vector2( 751.853, 173.974 )
+rotation = 0.722269
+scale = Vector2( 0.217627, 1.14876 )
 node_path_1 = NodePath("../../Oscillator/node")
 node_path_2 = NodePath("../../Oscillator/node3")
 
@@ -55,7 +55,7 @@ __meta__ = {
 }
 
 [node name="node" parent="Oscillator" instance=ExtResource( 4 )]
-position = Vector2( 837.456, 82.8113 )
+position = Vector2( 800.456, 118.811 )
 is_static = true
 
 [node name="node2" parent="Oscillator" instance=ExtResource( 4 )]
